@@ -1,1 +1,49 @@
-
+{
+  "short_name": "GeoLink",
+  "name": "GeoLink - Create, Connect & Earn",
+  "description": "Next-generation social platform for creators",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#7c3aed",
+  "background_color": "#0f172a",
+  "orientation": "portrait",
+  "scope": "/",
+  "categories": ["social", "entertainment", "photo", "video"],
+  "lang": "en",
+  "dir": "ltr",
+  "shortcuts": [
+    {
+      "name": "Upload",
+      "short_name": "Upload",
+      "description": "Upload new content",
+      "url": "/upload",
+      "icons": [{ "src": "/upload-icon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Messages",
+      "short_name": "Chat",
+      "description": "Open messages",
+      "url": "/chat",
+      "icons": [{ "src": "/chat-icon.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}
