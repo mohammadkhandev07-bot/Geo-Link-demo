@@ -1,1 +1,19 @@
+User-agent: *
+Allow: /
+Allow: /home
+Allow: /explore
+Allow: /about
+Allow: /legal/*
 
+Disallow: /api/
+Disallow: /admin/
+Disallow: /settings
+Disallow: /earnings
+Disallow: /library
+Disallow: /chat
+
+# Sitemap
+Sitemap: https://geolink.app/sitemap.xml
+
+# Crawl rate
+Crawl-delay: 1
