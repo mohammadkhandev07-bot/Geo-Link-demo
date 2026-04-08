@@ -1,22 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" class="spinner">
   <defs>
-    <linearGradient id="spinnerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <linearGradient id="spinGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
       <stop offset="100%" stop-color="#EC4899"/>
     </linearGradient>
   </defs>
   
-  <!-- Background track -->
   <circle cx="50" cy="50" r="45" fill="none" stroke="#1E293B" stroke-width="8"/>
+  <circle cx="50" cy="50" r="45" fill="none" stroke="url(#spinGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="60 140" id="spin-circle"/>
   
-  <!-- Animated spinner -->
-  <circle cx="50" cy="50" r="45" fill="none" stroke="url(#spinnerGrad)" stroke-width="8" stroke-linecap="round" stroke-dasharray="70 200">
-    <animateTransform 
-      attributeName="transform" 
-      type="rotate" 
-      from="0 50 50" 
-      to="360 50 50" 
-      dur="1s" 
-      repeatCount="indefinite"/>
-  </circle>
+  <style>
+    #spin-circle {
+      transform-origin: center;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </svg>
