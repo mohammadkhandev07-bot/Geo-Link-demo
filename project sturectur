@@ -1,0 +1,18 @@
+geolink/
+├── client/                 # React Frontend
+│   ├── src/
+│   │   ├── components/     # Reusable UI
+│   │   ├── pages/          # All pages
+│   │   ├── hooks/          # Custom hooks
+│   │   ├── context/        # Global state
+│   │   ├── utils/          # Helpers
+│   │   └── assets/         # Images, fonts
+│   └── public/
+├── server/                 # Node Backend
+│   ├── models/             # MongoDB schemas
+│   ├── routes/             # API endpoints
+│   ├── controllers/        # Business logic
+│   ├── middleware/         # Auth, validation
+│   ├── utils/              # Email, OTP, payments
+│   └── socket/             # Real-time handlers
+└── shared/                 # Common types/utils
