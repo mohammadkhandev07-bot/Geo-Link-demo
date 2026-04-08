@@ -1,18 +1,283 @@
 geolink/
-├── client/                 # React Frontend
+├── client/                          # React Frontend
+│   ├── public/
+│   │   ├── logo.svg
+│   │   ├── manifest.json
+│   │   └── robots.txt
 │   ├── src/
-│   │   ├── components/     # Reusable UI
-│   │   ├── pages/          # All pages
-│   │   ├── hooks/          # Custom hooks
-│   │   ├── context/        # Global state
-│   │   ├── utils/          # Helpers
-│   │   └── assets/         # Images, fonts
-│   └── public/
-├── server/                 # Node Backend
-│   ├── models/             # MongoDB schemas
-│   ├── routes/             # API endpoints
-│   ├── controllers/        # Business logic
-│   ├── middleware/         # Auth, validation
-│   ├── utils/              # Email, OTP, payments
-│   └── socket/             # Real-time handlers
-└── shared/                 # Common types/utils
+│   │   ├── assets/
+│   │   │   ├── images/
+│   │   │   └── styles/
+│   │   ├── components/
+│   │   │   ├── ui/                  # Reusable UI components
+│   │   │   │   ├── Button.jsx
+│   │   │   │   ├── Input.jsx
+│   │   │   │   ├── Modal.jsx
+│   │   │   │   ├── Loader.jsx
+│   │   │   │   ├── Avatar.jsx
+│   │   │   │   ├── Card.jsx
+│   │   │   │   ├── Tabs.jsx
+│   │   │   │   ├── Dropdown.jsx
+│   │   │   │   ├── Toast.jsx
+│   │   │   │   ├── Skeleton.jsx
+│   │   │   │   └── Tooltip.jsx
+│   │   │   ├── layout/
+│   │   │   │   ├── Navbar.jsx
+│   │   │   │   ├── Sidebar.jsx
+│   │   │   │   ├── BottomNav.jsx
+│   │   │   │   ├── Layout.jsx
+│   │   │   │   └── Footer.jsx
+│   │   │   ├── content/
+│   │   │   │   ├── VideoCard.jsx
+│   │   │   │   ├── PhotoCard.jsx
+│   │   │   │   ├── ContentGrid.jsx
+│   │   │   │   ├── VideoPlayer.jsx
+│   │   │   │   ├── ImageViewer.jsx
+│   │   │   │   ├── EngagementBar.jsx
+│   │   │   │   ├── CommentSection.jsx
+│   │   │   │   ├── ShareModal.jsx
+│   │   │   │   └── UploadProgress.jsx
+│   │   │   ├── chat/
+│   │   │   │   ├── ChatList.jsx
+│   │   │   │   ├── ChatWindow.jsx
+│   │   │   │   ├── MessageBubble.jsx
+│   │   │   │   ├── MessageInput.jsx
+│   │   │   │   ├── ChatHeader.jsx
+│   │   │   │   └── TypingIndicator.jsx
+│   │   │   ├── channel/
+│   │   │   │   ├── ChannelHeader.jsx
+│   │   │   │   ├── ChannelStats.jsx
+│   │   │   │   ├── VideoList.jsx
+│   │   │   │   ├── SubscribeButton.jsx
+│   │   │   │   └── CreatorBadge.jsx
+│   │   │   ├── search/
+│   │   │   │   ├── SearchBar.jsx
+│   │   │   │   ├── SearchFilters.jsx
+│   │   │   │   ├── SearchResults.jsx
+│   │   │   │   └── TrendingSearches.jsx
+│   │   │   ├── notifications/
+│   │   │   │   ├── NotificationBell.jsx
+│   │   │   │   ├── NotificationList.jsx
+│   │   │   │   └── NotificationItem.jsx
+│   │   │   └── Logo.jsx
+│   │   ├── pages/
+│   │   │   ├── Landing.jsx
+│   │   │   ├── Login.jsx
+│   │   │   ├── Signup.jsx
+│   │   │   ├── ForgotPassword.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── Explore.jsx
+│   │   │   ├── Reels.jsx
+│   │   │   ├── Chat.jsx
+│   │   │   ├── ChatDetail.jsx
+│   │   │   ├── Profile.jsx
+│   │   │   ├── EditProfile.jsx
+│   │   │   ├── Channel.jsx
+│   │   │   ├── CreateChannel.jsx
+│   │   │   ├── Upload.jsx
+│   │   │   ├── Library.jsx
+│   │   │   ├── Saved.jsx
+│   │   │   ├── Liked.jsx
+│   │   │   ├── History.jsx
+│   │   │   ├── Folders.jsx
+│   │   │   ├── Earnings.jsx
+│   │   │   ├── Analytics.jsx
+│   │   │   ├── Withdraw.jsx
+│   │   │   ├── Search.jsx
+│   │   │   ├── Map.jsx
+│   │   │   ├── Settings.jsx
+│   │   │   ├── Notifications.jsx
+│   │   │   ├── About.jsx
+│   │   │   ├── Contact.jsx
+│   │   │   ├── Legal.jsx
+│   │   │   ├── Help.jsx
+│   │   │   ├── NotFound.jsx
+│   │   │   └── ServerError.jsx
+│   │   ├── hooks/
+│   │   │   ├── useAuth.js
+│   │   │   ├── useSocket.js
+│   │   │   ├── useFetch.js
+│   │   │   ├── useInfiniteScroll.js
+│   │   │   ├── useLocalStorage.js
+│   │   │   ├── useDebounce.js
+│   │   │   ├── useMediaQuery.js
+│   │   │   ├── useVideoPlayer.js
+│   │   │   ├── useNotifications.js
+│   │   │   └── useLocation.js
+│   │   ├── context/
+│   │   │   ├── AuthContext.jsx
+│   │   │   ├── ThemeContext.jsx
+│   │   │   ├── SocketContext.jsx
+│   │   │   ├── NotificationContext.jsx
+│   │   │   └── AppContext.jsx
+│   │   ├── utils/
+│   │   │   ├── api.js
+│   │   │   ├── constants.js
+│   │   │   ├── helpers.js
+│   │   │   ├── formatters.js
+│   │   │   ├── validators.js
+│   │   │   ├── encryption.js
+│   │   │   └── analytics.js
+│   │   ├── styles/
+│   │   │   ├── globals.css
+│   │   │   ├── animations.css
+│   │   │   └── mapbox.css
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── router.jsx
+│   ├── index.html
+│   ├── vite.config.js
+│   ├── tailwind.config.js
+│   ├── postcss.config.js
+│   └── package.json
+│
+├── server/                          # Node Backend
+│   ├── config/
+│   │   ├── database.js
+│   │   ├── cloudinary.js
+│   │   ├── redis.js
+│   │   ├── email.js
+│   │   ├── sms.js
+│   │   ├── socket.js
+│   │   ├── queue.js
+│   │   └── passport.js
+│   ├── models/
+│   │   ├── User.js
+│   │   ├── Content.js
+│   │   ├── Chat.js
+│   │   ├── Transaction.js
+│   │   ├── Notification.js
+│   │   ├── Report.js
+│   │   ├── Ad.js
+│   │   ├── Campaign.js
+│   │   ├── Subscription.js
+│   │   ├── Category.js
+│   │   └── index.js
+│   ├── routes/
+│   │   ├── auth.js
+│   │   ├── users.js
+│   │   ├── content.js
+│   │   ├── channel.js
+│   │   ├── chat.js
+│   │   ├── earnings.js
+│   │   ├── search.js
+│   │   ├── notifications.js
+│   │   ├── admin.js
+│   │   ├── ads.js
+│   │   ├── analytics.js
+│   │   ├── upload.js
+│   │   ├── map.js
+│   │   └── index.js
+│   ├── controllers/
+│   │   ├── authController.js
+│   │   ├── userController.js
+│   │   ├── contentController.js
+│   │   ├── channelController.js
+│   │   ├── chatController.js
+│   │   ├── earningsController.js
+│   │   ├── searchController.js
+│   │   ├── notificationController.js
+│   │   ├── adminController.js
+│   │   ├── adController.js
+│   │   ├── analyticsController.js
+│   │   ├── uploadController.js
+│   │   └── mapController.js
+│   ├── middleware/
+│   │   ├── auth.js
+│   │   ├── upload.js
+│   │   ├── rateLimiter.js
+│   │   ├── validator.js
+│   │   ├── errorHandler.js
+│   │   ├── logger.js
+│   │   ├── security.js
+│   │   └── cache.js
+│   ├── utils/
+│   │   ├── otp.js
+│   │   ├── upload.js
+│   │   ├── validation.js
+│   │   ├── encryption.js
+│   │   ├── pagination.js
+│   │   ├── algorithm.js
+│   │   ├── points.js
+│   │   ├── payments.js
+│   │   ├── notifications.js
+│   │   ├── emailTemplates.js
+│   │   └── helpers.js
+│   ├── services/
+│   │   ├── videoProcessing.js
+│   │   ├── thumbnailGenerator.js
+│   │   ├── contentModeration.js
+│   │   ├── recommendationEngine.js
+│   │   ├── adEngine.js
+│   │   ├── paymentGateway.js
+│   │   ├── notificationService.js
+│   │   ├── searchIndexer.js
+│   │   └── analyticsService.js
+│   ├── jobs/
+│   │   ├── videoCompression.js
+│   │   ├── monthlyPayments.js
+│   │   ├── cleanup.js
+│   │   └── reports.js
+│   ├── socket/
+│   │   ├── handlers.js
+│   │   ├── chatHandler.js
+│   │   ├── notificationHandler.js
+│   │   ├── presenceHandler.js
+│   │   └── index.js
+│   ├── tests/
+│   │   ├── auth.test.js
+│   │   ├── content.test.js
+│   │   ├── earnings.test.js
+│   │   └── setup.js
+│   ├── seeders/
+│   │   ├── users.js
+│   │   ├── content.js
+│   │   └── categories.js
+│   ├── server.js
+│   ├── app.js
+│   ├── .env.example
+│   └── package.json
+│
+├── shared/                          # Shared between client/server
+│   ├── constants/
+│   │   ├── index.js
+│   │   ├── points.js
+│   │   ├── limits.js
+│   │   └── errors.js
+│   ├── types/
+│   │   ├── index.ts
+│   │   ├── user.ts
+│   │   └── content.ts
+│   └── utils/
+│       └── index.js
+│
+├── docs/                            # Documentation
+│   ├── API.md
+│   ├── ARCHITECTURE.md
+│   ├── DEPLOYMENT.md
+│   ├── CONTRIBUTING.md
+│   └── CHANGELOG.md
+│
+├── scripts/                         # Utility scripts
+│   ├── setup.sh
+│   ├── deploy.sh
+│   ├── backup.sh
+│   └── seed.js
+│
+├── docker/                          # Docker files
+│   ├── Dockerfile.client
+│   ├── Dockerfile.server
+│   ├── docker-compose.yml
+│   └── nginx.conf
+│
+├── .github/                         # GitHub Actions
+│   └── workflows/
+│       ├── ci.yml
+│       ├── deploy-staging.yml
+│       └── deploy-production.yml
+│
+├── .gitignore
+├── README.md
+├── LICENSE
+├── vercel.json
+└── package.json                     # Root package.json
